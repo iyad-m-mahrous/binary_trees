@@ -15,18 +15,14 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	pa = node->parent;
 
 	if (pa == grandpa->left)
-		if (node == pa->left)
-			if (grandpa->right && grandpa->right->left)
-				return (grandpa->right->left);
-		else
-			if (grandpa->right && grandpa->right->right)
-				return (grandpa->right->right);
+	{
+		if (grandpa->right)
+			return (grandpa->right);
+	}
 	else
-		if (node == pa->left)
-			if (grandpa->left && grandpa->left->left)
-				return (grandpa->left->left);
-		else
-			if (grandpa->left && grandpa->left->right)
-				return (grandpa->left->right);
+	{
+		if (grandpa->left)
+			return (grandpa->left);
+	}
 	return (NULL);
 }
