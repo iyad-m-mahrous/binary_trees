@@ -44,10 +44,8 @@ bst_t *bst_insert(bst_t **tree, int value)
 			}
 		}
 		else
-		{
-			free(new_node);
-			return (NULL);
-		}
+			break;
 	}
+	free(new_node);
 	return (NULL);
 }
