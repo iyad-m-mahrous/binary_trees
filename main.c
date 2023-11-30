@@ -21,17 +21,17 @@ int main(void)
         return (1);
     binary_tree_print(tree);
 
+    tree = bst_remove(tree, 84);
+    printf("Removed 84...\n");
+    binary_tree_print(tree);
+
+    tree = bst_remove(tree, 79);
+    printf("Removed 79...\n");
+    binary_tree_print(tree);
+
+
     tree = bst_remove(tree, 2);
     printf("Removed 2...\n");
-    binary_tree_print(tree);
-
-    tree = bst_remove(tree, 21);
-    printf("Removed 21...\n");
-    binary_tree_print(tree);
-
-
-    tree = bst_remove(tree, 34);
-    printf("Removed 34...\n");
     binary_tree_print(tree);
 
     tree = bst_remove(tree, 47);
