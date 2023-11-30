@@ -40,6 +40,8 @@ bst_t *bst_remove(bst_t *root, int value)
 	else if (node->parent && node == node->parent->right)
 		node->parent->right = temp;
 
+	if (node == root)
+		return (temp);
 	return (root);
 }
 
