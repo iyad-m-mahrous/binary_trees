@@ -11,7 +11,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 	bst_t *ptr;
 
 	if (!*tree)
-		return (*tree = new_node);
+		return (binary_tree_node(*tree, value));
 
 	ptr = *tree;
 	while (ptr)
