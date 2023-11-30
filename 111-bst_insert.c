@@ -8,12 +8,7 @@
  */
 bst_t *bst_insert(bst_t **tree, int value)
 {
-	bst_t *new_node, *ptr;
-
-	new_node = (bst_t *) calloc(1, sizeof(bst_t));
-	if (!new_node)
-		return (NULL);
-	new_node->n = value;
+	bst_t *ptr;
 
 	if (!*tree)
 		return (*tree = new_node);
@@ -27,9 +22,8 @@ bst_t *bst_insert(bst_t **tree, int value)
 				ptr = ptr->left;
 			else
 			{
-				ptr->left = new_node;
-				new_node->parent = ptr;
-				return (new_node);
+				ptr->left = binary_tree_node(ptr, value);
+				return (ptr->left);
 			}
 		}
 		else if (value > ptr->n)
@@ -38,14 +32,12 @@ bst_t *bst_insert(bst_t **tree, int value)
 				ptr = ptr->right;
 			else
 			{
-				ptr->right = new_node;
-				new_node->parent = ptr;
-				return (new_node);
+				ptr->right = binary_tree_node(ptr, value);
+				return (ptr->right);
 			}
 		}
 		else
 			break;
 	}
-	free(new_node);
 	return (NULL);
 }
